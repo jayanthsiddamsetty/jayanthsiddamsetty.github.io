@@ -43,17 +43,25 @@
     header {
       background: var(--main);
       color: white;
-      padding: 2rem 1rem;
+      padding: 1rem;
       text-align: center;
+      position: relative;
     }
 
-    header img {
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    header img.profile {
       width: 120px;
       height: 120px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 1rem;
       border: 3px solid white;
+      margin-top: -60px;
+      background: white;
     }
 
     .container {
@@ -114,19 +122,6 @@
       right: 15px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    input, textarea {
-      padding: 0.6rem;
-      border-radius: 0.3rem;
-      border: 1px solid #ccc;
-      font-family: inherit;
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.6rem;
@@ -140,7 +135,8 @@
   </div>
 
   <header>
-    <img src="profile.jpg" alt="Jayanth Siddamsetty photo">
+    <img src="banner.jpg" alt="Banner image" class="banner">
+    <img src="profile.jpg" alt="Jayanth Siddamsetty photo" class="profile">
     <h1>Jayanth Siddamsetty</h1>
     <p>Trustworthy AI | AI Governance, Risk & Compliance | ISO 42001 Implementer</p>
     <a href="resume.pdf" class="btn" download>Download Resume (PDF)</a>
@@ -212,17 +208,6 @@
         <li>Predicting Crop Yield with Machine Learning: an Extensive Analysis...</li>
       </ul>
     </section>
-
-    <section>
-      <h2>Contact Form</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" rows="4" placeholder="Your message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <p><em>(This is a static form. Use Formspree, Netlify Forms, or similar service to enable it.)</em></p>
-    </section>
   </div>
 
   <script>
@@ -231,7 +216,5 @@
       html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
     }
   </script>
-
-  <!-- Optional: Add your Google Analytics tag or Plausible script here -->
 </body>
 </html>
