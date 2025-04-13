@@ -1,0 +1,148 @@
+:root {
+  --light-bg: #f9f9f9;
+  --light-text: #333;
+  --light-main: #2c3e50;
+  --light-accent: #18bc9c;
+
+  --dark-bg: #1e1e1e;
+  --dark-text: #e0e0e0;
+  --dark-main: #ffffff;
+  --dark-accent: #1abc9c;
+}
+
+[data-theme="light"] {
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  --main: var(--light-main);
+  --accent: var(--light-accent);
+}
+
+[data-theme="dark"] {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --main: var(--dark-main);
+  --accent: var(--dark-accent);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: var(--main);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+header h1,
+header p,
+header .btn {
+  position: relative;
+  z-index: 2;
+}
+
+.banner {
+  display: none;
+}
+
+header img.profile {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: 0;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  color: var(--main);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background: var(--accent);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0.5rem;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+} 
