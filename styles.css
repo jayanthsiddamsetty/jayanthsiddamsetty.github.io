@@ -123,6 +123,10 @@ ul {
   font-size: 0.9rem;
 }
 
+.tag.language {
+  background: var(--main);
+}
+
 .btn {
   background: var(--accent);
   color: white;
@@ -145,4 +149,49 @@ ul {
   header h1 {
     font-size: 1.6rem;
   }
+}
+
+.experience-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+}
+
+.experience-item h3 {
+  color: var(--main);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.role-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.role-info span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.role-info span:not(:last-child)::after {
+  content: "•";
+  margin-left: 1rem;
+  color: var(--accent);
+}
+
+.experience-item ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.experience-item li {
+  margin-bottom: 0.3rem;
 } 
