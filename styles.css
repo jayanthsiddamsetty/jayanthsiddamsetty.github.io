@@ -165,6 +165,21 @@ ul {
   color: var(--main);
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.experience-item h4 {
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.experience-item h5 {
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .role-info {
@@ -186,18 +201,6 @@ ul {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.role-info span.designation {
-  background: var(--accent);
-  color: white;
-}
-
-.role-info span:not(:last-child)::after {
-  content: "•";
-  margin-left: 1.5rem;
-  color: var(--accent);
-  font-weight: bold;
-}
-
 .experience-item ul {
   margin-top: 0.5rem;
   padding-left: 1.5rem;
@@ -205,4 +208,32 @@ ul {
 
 .experience-item li {
   margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.credly-badge {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.credly-badge iframe {
+  border: none;
+  display: block;
+}
+
+.certifications ul {
+  flex: 1;
+  min-width: 200px;
+  margin: 0;
 } 
