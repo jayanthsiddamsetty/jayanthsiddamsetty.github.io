@@ -1,7 +1,5 @@
 ## Hi there 👋
 
-Here are some ideas to get you started:
-
 - 🔭 I’m currently working on evaluating robustness of AI systems
 - 🌱 I’m currently learning about AI governance and risk management
 - 👯 I’m looking to collaborate on projects related to AI policy, governance and risk management
