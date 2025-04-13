@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jayanth Siddamsetty - Trustworthy AI Expert</title>
+  <style>
+    :root {
+      --light-bg: #f9f9f9;
+      --light-text: #333;
+      --light-main: #2c3e50;
+      --light-accent: #18bc9c;
+
+      --dark-bg: #1e1e1e;
+      --dark-text: #e0e0e0;
+      --dark-main: #ffffff;
+      --dark-accent: #1abc9c;
+    }
+
+    [data-theme="light"] {
+      --bg: var(--light-bg);
+      --text: var(--light-text);
+      --main: var(--light-main);
+      --accent: var(--light-accent);
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--dark-bg);
+      --text: var(--dark-text);
+      --main: var(--dark-main);
+      --accent: var(--dark-accent);
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--main);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: var(--main);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0.5rem;
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    input, textarea {
+      padding: 0.6rem;
+      border-radius: 0.3rem;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()" class="btn">Toggle Theme</button>
+  </div>
+
+  <header>
+    <img src="profile.jpg" alt="Jayanth Siddamsetty photo">
+    <h1>Jayanth Siddamsetty</h1>
+    <p>Trustworthy AI | AI Governance, Risk & Compliance | ISO 42001 Implementer</p>
+    <a href="resume.pdf" class="btn" download>Download Resume (PDF)</a>
+  </header>
+
+  <div class="container">
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:jsiddamsetty@gmail.com">jsiddamsetty@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jayanthsiddamsetty" target="_blank">linkedin.com/in/jayanthsiddamsetty</a></p>
+      <p>Location: Kaiserslautern, Germany</p>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Researcher at the German Research Center for Artificial Intelligence (DFKI), focused on the trustworthiness of AI applications, bridging regulations and standards with technical testing. Active in AI Governance, Risk Management, and Compliance with hands-on experience in EU AI Act, NIST AI RMF, and ISO/IEC 42001 frameworks.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>DFKI – Researcher (Aug 2024 – Present)</strong> – Mission KI project: Trustworthy AI for SMEs</li>
+        <li><strong>DFKI – Researcher (Jun 2022 – Aug 2024)</strong></li>
+        <li><strong>University of Kaiserslautern – Student Assistant (Feb 2022 – May 2022)</strong></li>
+        <li><strong>Fraunhofer ITWM – Research Assistant (Apr 2021 – May 2022)</strong></li>
+        <li><strong>DFKI – Master Thesis (Oct 2021 – Apr 2022)</strong></li>
+        <li><strong>Fraunhofer IESE – Student Research Assistant (Nov 2020 – Mar 2021)</strong></li>
+        <li><strong>Société Générale – Software Engineer (Jul 2017 – Jul 2019)</strong></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Technische Universität Kaiserslautern</strong> – Master's in Computer Science</li>
+        <li><strong>Sir M Visvesvaraya Institute Of Technology</strong> – BE in Information Science</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills & Languages</h2>
+      <div class="tags">
+        <div class="tag">AI Management System</div>
+        <div class="tag">ISO 42001</div>
+        <div class="tag">Generative AI</div>
+        <div class="tag">English</div>
+        <div class="tag">Kannada</div>
+        <div class="tag">German</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>ISO/IEC 42001 Provisional Implementer</li>
+        <li>Ethics of AI</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Publications</h2>
+      <ul>
+        <li>Crop Yield Prediction: an Operational Approach...</li>
+        <li>Influence of Data Cleaning Techniques...</li>
+        <li>Feature Attribution Methods for Multivariate Time-Series...</li>
+        <li>Inter-region Transfer Learning for LULC Classification</li>
+        <li>Predicting Crop Yield with Machine Learning: an Extensive Analysis...</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact Form</h2>
+      <form>
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p><em>(This is a static form. Use Formspree, Netlify Forms, or similar service to enable it.)</em></p>
+    </section>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+  </script>
+
+  <!-- Optional: Add your Google Analytics tag or Plausible script here -->
+</body>
+</html>
