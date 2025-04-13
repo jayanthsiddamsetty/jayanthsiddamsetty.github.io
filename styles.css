@@ -216,19 +216,34 @@ ul {
   flex-wrap: wrap;
   gap: 2rem;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
-.credly-badge {
+.cert-badge {
   flex-shrink: 0;
   margin-bottom: 1rem;
   background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  order: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.credly-badge iframe {
-  border: none;
+.cert-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cert-badge a {
+  text-decoration: none;
+  display: block;
+}
+
+.badge-image {
+  width: 150px;
+  height: auto;
   display: block;
 }
 
@@ -236,4 +251,46 @@ ul {
   flex: 1;
   min-width: 200px;
   margin: 0;
+  order: 1;
+}
+
+.certifications ul li a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.link-symbol {
+  margin-left: 0.3rem;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.certifications ul li a:hover .link-symbol {
+  opacity: 1;
+}
+
+.certifications ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.certifications ul li a:hover {
+  color: var(--accent);
+}
+
+.certifications ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 } 
