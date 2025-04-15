@@ -201,6 +201,12 @@ ul {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.role-info span.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .experience-item ul {
   margin-top: 0.5rem;
   padding-left: 1.5rem;
