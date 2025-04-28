@@ -127,6 +127,10 @@ ul {
   background: var(--main);
 }
 
+.tag.skill {
+  background: var(--main);
+}
+
 .btn {
   background: var(--accent);
   color: white;
