@@ -121,6 +121,13 @@ ul {
   padding: 0.3rem 0.7rem;
   border-radius: 1rem;
   font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition for smooth effect */
+}
+
+.tag:hover {
+  background: var(--main); /* Change background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the tag on hover */
+  cursor: pointer; /* Change cursor to pointer */
 }
 
 .tag.language {
@@ -258,13 +265,19 @@ ul {
 }
 
 .certifications ul {
-  flex: 1;
-  min-width: 200px;
-  margin: 0;
-  order: 1;
+  list-style: disc; /* Add default bullets */
+  padding-left: 1.5rem; /* Add padding for proper alignment */
+  margin: 0; /* Remove margin */
+}
+
+.certifications ul li {
+  margin-bottom: 0.5rem; /* Add spacing between list items */
+  line-height: 1.5; /* Ensure proper line height */
 }
 
 .certifications ul li a {
+  display: inline-block; /* Ensure the link spans only the content */
+  text-decoration: none; /* Remove underline */
   color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -303,4 +316,4 @@ ul {
 .certifications ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
-} 
+}
