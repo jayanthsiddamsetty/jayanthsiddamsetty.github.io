@@ -4,6 +4,8 @@
   --light-main: #2c3e50;
   --light-accent: #18bc9c;
 
+  --medium-bg: #ececec;
+
   --dark-bg: #1e1e1e;
   --dark-text: #e0e0e0;
   --dark-main: #ffffff;
@@ -106,7 +108,7 @@ ul {
 .contact {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: var(--bg-light); /* Use a light background color */
+  background-color: var(--medium-bg); /* Use a light background color */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -166,11 +168,12 @@ ul {
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact form button:hover {
   background-color: var(--main);
+  transform: scale(1.05);
 }
 
 .tags {
@@ -391,7 +394,7 @@ ul {
 .resume-button .btn {
   padding: 0.5rem 1rem; /* Reduce padding for a smaller size */
   font-size: 0.9rem; /* Make the text size smaller */
-  background-color: var(--bg-light); /* Use a subtle background color */
+  background-color: var(--light-bg); /* Use a subtle background color */
   color: var(--text); /* Use a subtle text color */
   border: 1px solid var(--accent); /* Add a border for a clean look */
   border-radius: 5px; /* Slightly rounded corners */
