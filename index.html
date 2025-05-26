@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jayanth Siddamsetty - AI GRC</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <title>Jayanth Siddamsetty - Trustworthy AI</title>
+  <link rel="icon" type="image/png" href="Yashoda_Responsible_AI_Logo.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -15,6 +15,12 @@
     <button onclick="toggleTheme()" class="btn" aria-label="Toggle theme">
       <i class="fas fa-sun"></i>
     </button>
+  </div>
+
+  <!-- Add Modal -->
+  <div id="imageModal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
   </div>
 
   <header>
@@ -255,8 +261,7 @@
               <p class="cert-description">Certified to support the implementation of AI Management Systems (AIMS) in alignment with ISO/IEC 42001, the first international standard focused specifically on AI governance. This certification demonstrates capability in operationalizing responsible AI practices through structured management systems, risk controls, and compliance frameworks—foundational elements for effective AI governance.</p>
             </div>
             <div class="cert-badge">
-              <a href="https://www.credly.com/badges/936688d8-5de9-498b-a003-0f27adf169a8/public_url" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
+              <a onclick="openModal('pecb_badge.png')" class="badge-link">
                 <img src="pecb_badge.png" alt="ISO/IEC 42001 Provisional Implementer Badge" class="badge-image">
               </a>
             </div>
@@ -271,8 +276,7 @@
               <p class="cert-description">Certified in the foundational concepts of independent AI auditing, including assurance, audit methodology, regulatory compliance, and the roles of stakeholders in AI oversight. This training is a prerequisite for advanced auditor and expert credentials and marks a first step toward structured, external accountability in AI systems.</p>
             </div>
             <div class="cert-badge">
-              <a href="https://forhumanity.dev/cert/badges/badge.php?hash=aebd969a71601b1edd87a9e97e76690acb36a762" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
+              <a onclick="openModal('fiaais_badge.png')" class="badge-link">
                 <img src="fiaais_badge.png" alt="Foundations of Independent Audit of AI Systems" class="badge-image">
               </a>
             </div>
@@ -287,8 +291,7 @@
               <p class="cert-description">Completed a structured program focused on the ethical dimensions of AI, including principles such as fairness, accountability, transparency, and human rights. This course strengthens the ethical foundation necessary for evaluating and guiding AI systems within both regulatory and societal expectations.</p>
             </div>
             <div class="cert-badge">
-              <a href="https://certificates.mooc.fi/validate/9w5bcrstzb" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
+              <a onclick="openModal('certificate-ethics-of-ai.png')" class="badge-link">
                 <img src="certificate-ethics-of-ai.png" alt="Ethics of AI" class="badge-image">
               </a>
             </div>
@@ -301,59 +304,61 @@
                 <p class="cert-issuer">University of Helsinki / Una Europa Alliance</p>
               </div>
               <p class="cert-description">Explored the broader societal implications of AI through interdisciplinary lenses, addressing its effects on democracy, justice, discrimination, and public institutions. The course provides critical context for understanding the policy and social dimensions of AI governance.</p>
+              <button class="expand-button" onclick="toggleSubCerts(this)">
+                <i class="fas fa-chevron-down"></i>
+                <span>Show Sub-certifications</span>
+              </button>
+              <div class="sub-certs">
+                <div class="sub-cert-item">
+                  <div class="cert-content">
+                    <div class="cert-header">
+                      <a href="https://courses.mooc.fi/certificates/validate/rk5xfzmhkfxumah" target="_blank"
+                        rel="noopener noreferrer" class="cert-title">AI and Discrimination<span class="link-symbol">↗</span></a>
+                      <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
+                    </div>
+                    <p class="cert-description">This module explores strategies for identifying and mitigating bias in AI systems. It emphasizes that fairness is not solely a technical attribute but also depends on the organizational context in which AI is deployed. The course highlights the importance of understanding institutional practices and user interactions to prevent discriminatory outcomes, reinforcing the need for comprehensive governance frameworks in AI implementation.</p>
+                  </div>
+                  <div class="cert-badge">
+                    <a onclick="openModal('certificate-ai-and-discrimination.png')" class="badge-link">
+                      <img src="certificate-ai-and-discrimination.png" alt="AI and Discrimination" class="badge-image">
+                    </a>
+                  </div>
+                </div>
+                <div class="sub-cert-item">
+                  <div class="cert-content">
+                    <div class="cert-header">
+                      <a href="https://courses.mooc.fi/certificates/validate/ivarim9ks6kfg2v" target="_blank"
+                        rel="noopener noreferrer" class="cert-title">AI and Justice<span class="link-symbol">↗</span></a>
+                      <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
+                    </div>
+                    <p class="cert-description">This module examines the integration of AI in justice systems, highlighting both its potential benefits and associated risks. While AI can enhance efficiency in legal processes, it also raises concerns regarding human rights, due process, and the rule of law. The course emphasizes the necessity for robust governance frameworks to ensure that AI applications in justice uphold democratic principles and ethical standards.</p>
+                  </div>
+                  <div class="cert-badge">
+                    <a onclick="openModal('certificate-ai-and-justice.png')" class="badge-link">
+                      <img src="certificate-ai-and-justice.png" alt="AI and Justice" class="badge-image">
+                    </a>
+                  </div>
+                </div>
+                <div class="sub-cert-item">
+                  <div class="cert-content">
+                    <div class="cert-header">
+                      <a href="https://courses.mooc.fi/certificates/validate/fa6hqi77qytzpkd" target="_blank"
+                        rel="noopener noreferrer" class="cert-title">AI and Democracy<span class="link-symbol">↗</span></a>
+                      <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
+                    </div>
+                    <p class="cert-description">Covered the impact of AI on fundamental rights and the manipulation of information. Highlighted risks such as surveillance, biased content curation, and threats to privacy and free expression—emphasizing the need for rights-based AI governance.</p>
+                  </div>
+                  <div class="cert-badge">
+                    <a onclick="openModal('certificate-ai-and-democracy.png')" class="badge-link">
+                      <img src="certificate-ai-and-democracy.png" alt="AI and Democracy" class="badge-image">
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="cert-badge">
-              <a href="https://courses.mooc.fi/certificates/validate/imurmcngvt94h5c" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
+              <a onclick="openModal('certificate-ai-in-society.png')" class="badge-link">
                 <img src="certificate-ai-in-society.png" alt="AI in Society" class="badge-image">
-              </a>
-            </div>
-          </li>
-          <li class="cert-item">
-            <div class="cert-content">
-              <div class="cert-header">
-                <a href="https://courses.mooc.fi/certificates/validate/rk5xfzmhkfxumah" target="_blank"
-                  rel="noopener noreferrer" class="cert-title">AI and Discrimination<span class="link-symbol">↗</span></a>
-                <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
-              </div>
-              <p class="cert-description">This module explores strategies for identifying and mitigating bias in AI systems. It emphasizes that fairness is not solely a technical attribute but also depends on the organizational context in which AI is deployed. The course highlights the importance of understanding institutional practices and user interactions to prevent discriminatory outcomes, reinforcing the need for comprehensive governance frameworks in AI implementation.</p>
-            </div>
-            <div class="cert-badge">
-              <a href="https://courses.mooc.fi/certificates/validate/rk5xfzmhkfxumah" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
-                <img src="certificate-ai-and-discrimination.png" alt="AI and Discrimination" class="badge-image">
-              </a>
-            </div>
-          </li>
-          <li class="cert-item">
-            <div class="cert-content">
-              <div class="cert-header">
-                <a href="https://courses.mooc.fi/certificates/validate/ivarim9ks6kfg2v" target="_blank"
-                  rel="noopener noreferrer" class="cert-title">AI and Justice<span class="link-symbol">↗</span></a>
-                <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
-              </div>
-              <p class="cert-description">This module examines the integration of AI in justice systems, highlighting both its potential benefits and associated risks. While AI can enhance efficiency in legal processes, it also raises concerns regarding human rights, due process, and the rule of law. The course emphasizes the necessity for robust governance frameworks to ensure that AI applications in justice uphold democratic principles and ethical standards.</p>
-            </div>
-            <div class="cert-badge">
-              <a href="https://courses.mooc.fi/certificates/validate/ivarim9ks6kfg2v" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
-                <img src="certificate-ai-and-justice.png" alt="AI and Justice" class="badge-image">
-              </a>
-            </div>
-          </li>
-          <li class="cert-item">
-            <div class="cert-content">
-              <div class="cert-header">
-                <a href="https://courses.mooc.fi/certificates/validate/fa6hqi77qytzpkd" target="_blank"
-                  rel="noopener noreferrer" class="cert-title">AI and Democracy<span class="link-symbol">↗</span></a>
-                <p class="cert-issuer">University of Helsinki / Una Europa Alliance, under AI in Society</p>
-              </div>
-              <p class="cert-description">Covered the impact of AI on fundamental rights and the manipulation of information. Highlighted risks such as surveillance, biased content curation, and threats to privacy and free expression—emphasizing the need for rights-based AI governance.</p>
-            </div>
-            <div class="cert-badge">
-              <a href="https://courses.mooc.fi/certificates/validate/fa6hqi77qytzpkd" target="_blank"
-                rel="noopener noreferrer" class="badge-link">
-                <img src="certificate-ai-and-democracy.png" alt="AI and Democracy" class="badge-image">
               </a>
             </div>
           </li>
@@ -401,6 +406,26 @@
       html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
     }
 
+    // Image Modal Functions
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = "block";
+      modalImg.src = imageSrc;
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
     // Load Credly badge after DOM is ready
     document.addEventListener('DOMContentLoaded', function () {
       setTimeout(function () {
@@ -411,6 +436,13 @@
         document.body.appendChild(script);
       }, 100);
     });
+
+    function toggleSubCerts(button) {
+      const subCerts = button.nextElementSibling;
+      const isExpanded = subCerts.classList.toggle('expanded');
+      button.classList.toggle('expanded');
+      button.querySelector('span').textContent = isExpanded ? 'Hide Sub-certifications' : 'Show Sub-certifications';
+    }
   </script>
 </body>
 
