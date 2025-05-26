@@ -401,6 +401,7 @@
   </div>
 
   <script>
+    // Theme toggle function
     function toggleTheme() {
       const html = document.documentElement;
       html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
@@ -408,41 +409,95 @@
 
     // Image Modal Functions
     function openModal(imageSrc) {
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-      modal.style.display = "block";
-      modalImg.src = imageSrc;
-    }
-
-    function closeModal() {
-      document.getElementById('imageModal').style.display = "none";
-    }
-
-    // Close modal when clicking outside the image
-    window.onclick = function(event) {
-      const modal = document.getElementById('imageModal');
-      if (event.target == modal) {
-        modal.style.display = "none";
+      try {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        if (modal && modalImg) {
+          modal.style.display = "block";
+          modalImg.src = imageSrc;
+          // Prevent body scrolling when modal is open
+          document.body.style.overflow = 'hidden';
+        }
+      } catch (error) {
+        console.error('Error opening modal:', error);
       }
     }
 
-    // Load Credly badge after DOM is ready
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(function () {
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.src = '//cdn.credly.com/assets/utilities/embed.js';
-        document.body.appendChild(script);
-      }, 100);
+    function closeModal() {
+      try {
+        const modal = document.getElementById('imageModal');
+        if (modal) {
+          modal.style.display = "none";
+          // Restore body scrolling
+          document.body.style.overflow = 'auto';
+        }
+      } catch (error) {
+        console.error('Error closing modal:', error);
+      }
+    }
+
+    // Close modal when clicking outside the image
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('imageModal');
+      if (modal && event.target === modal) {
+        closeModal();
+      }
     });
 
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Sub-certifications toggle function
     function toggleSubCerts(button) {
-      const subCerts = button.nextElementSibling;
-      const isExpanded = subCerts.classList.toggle('expanded');
-      button.classList.toggle('expanded');
-      button.querySelector('span').textContent = isExpanded ? 'Hide Sub-certifications' : 'Show Sub-certifications';
+      try {
+        if (!button) return;
+        
+        const subCerts = button.nextElementSibling;
+        if (!subCerts) return;
+
+        const isExpanded = subCerts.classList.toggle('expanded');
+        button.classList.toggle('expanded');
+        
+        const buttonText = button.querySelector('span');
+        if (buttonText) {
+          buttonText.textContent = isExpanded ? 'Hide Sub-certifications' : 'Show Sub-certifications';
+        }
+      } catch (error) {
+        console.error('Error toggling sub-certifications:', error);
+      }
     }
+
+    // Initialize everything after DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Credly badge
+      try {
+        setTimeout(function() {
+          const script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.src = '//cdn.credly.com/assets/utilities/embed.js';
+          document.body.appendChild(script);
+        }, 100);
+      } catch (error) {
+        console.error('Error loading Credly script:', error);
+      }
+
+      // Add click event listeners to all badge links
+      const badgeLinks = document.querySelectorAll('.badge-link');
+      badgeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const imgSrc = this.querySelector('img')?.src;
+          if (imgSrc) {
+            openModal(imgSrc);
+          }
+        });
+      });
+    });
   </script>
 </body>
 
