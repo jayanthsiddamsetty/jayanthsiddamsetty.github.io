@@ -18,7 +18,7 @@ I am a Researcher at the German Research Center for Artificial Intelligence (DFK
 - NIST AI Risk Management Framework
 - ISO/IEC 42001 Implementation
 - AI Ethics and Policy
-- GPAI Code of Practice (Academic stakeholder)
+- GPAI Code of Practice (Academic stakeholder in the drafting process)
 
 ### Technical Skills
 - Deep Learning (PyTorch, CNN, LSTM, Transformers)
